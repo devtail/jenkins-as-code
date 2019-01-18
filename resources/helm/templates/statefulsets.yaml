@@ -1,0 +1,54 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: jenkins
+spec:
+  selector:
+    matchLabels:
+      app: jenkins 
+  serviceName: "jenkins"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jenkins 
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: jenkins
+        image: quay.io/devtail/jenkins-as-code:master
+        imagePullPolicy: Always
+        env:
+        - name: DEPLOY_TS
+          value: "{{ date "20060102150405" .Release.Time }}"
+        - name: GITHUB_OAUTH_CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: jenkins-tokens
+              key: github-oauth-client-id
+        - name: GITHUB_OAUTH_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: jenkins-tokens
+              key: github-oauth-client-secret
+        ports:
+        - containerPort: 8080
+          name: http
+        volumeMounts:
+        - name: jenkins-ssh-keys
+          mountPath: /var/jenkins_home/jenkins-ssh-keys
+        - name: jenkins-basic-auth-credentials
+          mountPath: /var/jenkins_home/jenkins-basic-auth-credentials
+        - name: jenkins-tokens
+          mountPath: /var/jenkins_home/jenkins-tokens
+      volumes:
+      - name: jenkins-ssh-keys
+        secret:
+          secretName: jenkins-ssh-keys
+      - name: jenkins-basic-auth-credentials
+        secret:
+          secretName: jenkins-basic-auth-credentials
+      - name: jenkins-tokens
+        secret:
+          secretName: jenkins-tokens

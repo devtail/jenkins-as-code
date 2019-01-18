@@ -1,0 +1,95 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<scriptApproval plugin="script-security@1.46">
+  <approvedScriptHashes/>
+  <approvedSignatures>
+    <string>field jenkins.plugins.slack.SlackNotifier$DescriptorImpl baseUrl</string>
+    <string>field jenkins.plugins.slack.SlackNotifier$DescriptorImpl teamDomain</string>
+    <string>field jenkins.plugins.slack.SlackNotifier$DescriptorImpl tokenCredentialId</string>
+    <string>method com.cloudbees.plugins.credentials.CredentialsStore addCredentials com.cloudbees.plugins.credentials.domains.Domain com.cloudbees.plugins.credentials.Credentials</string>
+    <string>method com.cloudbees.plugins.credentials.SystemCredentialsProvider getStore</string>
+    <string>method groovy.lang.GroovyObject invokeMethod java.lang.String java.lang.Object</string>
+    <string>method hudson.model.Descriptor load</string>
+    <string>method hudson.model.Saveable save</string>
+    <string>method hudson.slaves.EnvironmentVariablesNodeProperty getEnvVars</string>
+    <string>method hudson.util.PersistedList getAll java.lang.Class</string>
+    <string>method java.lang.Class isInstance java.lang.Object</string>
+    <string>method jenkins.model.Jenkins addNode hudson.model.Node</string>
+    <string>method jenkins.model.Jenkins getDescriptor java.lang.String</string>
+    <string>method jenkins.model.Jenkins getExtensionList java.lang.Class</string>
+    <string>method jenkins.model.Jenkins getExtensionList java.lang.String</string>
+    <string>method jenkins.model.Jenkins getGlobalNodeProperties</string>
+    <string>method jenkins.model.Jenkins setAuthorizationStrategy hudson.security.AuthorizationStrategy</string>
+    <string>method jenkins.model.Jenkins setSecurityRealm hudson.security.SecurityRealm</string>
+    <string>method jenkins.model.JenkinsLocationConfiguration setUrl java.lang.String</string>
+    <string>method jenkins.plugins.git.GitSCMSource setCredentialsId java.lang.String</string>
+    <string>method jenkins.plugins.git.GitSCMSource setTraits java.util.List</string>
+    <string>method jenkins.scm.api.SCMSource setTraits java.util.List</string>
+    <string>method org.codefirst.SimpleThemeDecorator setCssUrl java.lang.String</string>
+    <string>method org.jenkinsci.main.modules.sshd.SSHD getActualPort</string>
+    <string>method org.jenkinsci.main.modules.sshd.SSHD setPort int</string>
+    <string>method org.jenkinsci.plugins.github.config.GitHubPluginConfig setConfigs java.util.List</string>
+    <string>method org.jenkinsci.plugins.github.config.GitHubServerConfig setManageHooks boolean</string>
+    <string>method org.jenkinsci.plugins.github.config.GitHubServerConfig setName java.lang.String</string>
+    <string>method org.jenkinsci.plugins.matrixauth.AuthorizationContainer add hudson.security.Permission java.lang.String</string>
+    <string>method org.jenkinsci.plugins.workflow.libs.GlobalLibraries getLibraries</string>
+    <string>method org.jenkinsci.plugins.workflow.libs.GlobalLibraries setLibraries java.util.List</string>
+    <string>method org.jenkinsci.plugins.workflow.libs.LibraryConfiguration getName</string>
+    <string>method org.jenkinsci.plugins.workflow.libs.LibraryConfiguration setAllowVersionOverride boolean</string>
+    <string>method org.jenkinsci.plugins.workflow.libs.LibraryConfiguration setDefaultVersion java.lang.String</string>
+    <string>method org.jenkinsci.plugins.workflow.libs.LibraryConfiguration setImplicit boolean</string>
+    <string>method org.jenkinsci.plugins.workflow.libs.LibraryConfiguration setIncludeInChangesets boolean</string>
+    <string>method org.codefirst.SimpleThemeDecorator setElements java.util.List</string>
+    <string>method jenkins.CLI get</string>
+    <string>method jenkins.CLI setEnabled boolean</string>
+    <string>method jenkins.model.Jenkins getCrumbIssuer</string>
+    <string>method jenkins.model.Jenkins setCrumbIssuer hudson.security.csrf.CrumbIssuer</string>
+    <string>method jenkins.model.Jenkins getInjector</string>
+    <string>method com.google.inject.Injector getInstance java.lang.Class</string>
+    <string>method jenkins.security.s2m.AdminWhitelistRule setMasterKillSwitch boolean</string>
+    <string>new hudson.security.csrf.DefaultCrumbIssuer boolean</string>
+    <string>new com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey com.cloudbees.plugins.credentials.CredentialsScope java.lang.String java.lang.String com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey$PrivateKeySource java.lang.String java.lang.String</string>
+    <string>new com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey$DirectEntryPrivateKeySource java.lang.String</string>
+    <string>new com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey$FileOnMasterPrivateKeySource java.lang.String</string>
+    <string>new com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl com.cloudbees.plugins.credentials.CredentialsScope java.lang.String java.lang.String java.lang.String java.lang.String</string>
+    <string>new hudson.plugins.sshslaves.SSHLauncher java.lang.String int com.cloudbees.plugins.credentials.common.StandardUsernameCredentials java.lang.String java.lang.String hudson.tools.JDKInstaller java.lang.String java.lang.String java.lang.Integer java.lang.Integer java.lang.Integer</string>
+    <string>new hudson.plugins.sshslaves.SSHLauncher java.lang.String int java.lang.String java.lang.String java.lang.String java.lang.String java.lang.String java.lang.Integer java.lang.Integer java.lang.Integer hudson.plugins.sshslaves.verifiers.SshHostKeyVerificationStrategy</string>
+    <string>new hudson.plugins.sshslaves.verifiers.NonVerifyingKeyVerificationStrategy</string>
+    <string>new hudson.security.GlobalMatrixAuthorizationStrategy</string>
+    <string>new hudson.slaves.DumbSlave java.lang.String java.lang.String java.lang.String java.lang.String hudson.model.Node$Mode java.lang.String hudson.slaves.ComputerLauncher hudson.slaves.RetentionStrategy java.util.List</string>
+    <string>new hudson.slaves.EnvironmentVariablesNodeProperty hudson.slaves.EnvironmentVariablesNodeProperty$Entry[]</string>
+    <string>new hudson.slaves.RetentionStrategy$Always</string>
+    <string>new hudson.slaves.RetentionStrategy$Demand long long</string>
+    <string>new java.io.File java.lang.String</string>
+    <string>new java.util.LinkedList</string>
+    <string>new jenkins.plugins.git.GitSCMSource java.lang.String</string>
+    <string>new jenkins.plugins.git.traits.BranchDiscoveryTrait</string>
+    <string>new org.jenkinsci.plugins.GithubSecurityRealm java.lang.String java.lang.String java.lang.String java.lang.String java.lang.String</string>
+    <string>new org.jenkinsci.plugins.github.config.GitHubServerConfig java.lang.String</string>
+    <string>new org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl com.cloudbees.plugins.credentials.CredentialsScope java.lang.String java.lang.String hudson.util.Secret</string>
+    <string>new org.jenkinsci.plugins.slave_setup.SetupSlaveLauncher hudson.slaves.ComputerLauncher java.lang.String java.lang.String</string>
+    <string>new org.jenkinsci.plugins.workflow.libs.LibraryConfiguration java.lang.String org.jenkinsci.plugins.workflow.libs.LibraryRetriever</string>
+    <string>new org.jenkinsci.plugins.workflow.libs.SCMSourceRetriever jenkins.scm.api.SCMSource</string>
+    <string>new org.jenkinsci.plugins.simpletheme.CssUrlThemeElement java.lang.String</string>
+    <string>staticField com.cloudbees.plugins.credentials.CredentialsScope GLOBAL</string>
+    <string>staticField hudson.model.Node$Mode EXCLUSIVE</string>
+    <string>staticField jenkins.model.Jenkins ADMINISTER</string>
+    <string>staticField org.jenkinsci.plugins.GithubSecurityRealm DEFAULT_API_URI</string>
+    <string>staticField org.jenkinsci.plugins.GithubSecurityRealm DEFAULT_WEB_URI</string>
+    <string>staticMethod com.cloudbees.plugins.credentials.domains.Domain global</string>
+    <string>staticMethod hudson.model.PageDecorator all</string>
+    <string>staticMethod hudson.model.User get java.lang.String boolean java.util.Map</string>
+    <string>staticMethod hudson.plugins.sshslaves.SSHLauncher lookupSystemCredentials java.lang.String</string>
+    <string>staticMethod hudson.util.Secret fromString java.lang.String</string>
+    <string>staticMethod java.lang.System getenv</string>
+    <string>staticMethod java.lang.System setProperty java.lang.String java.lang.String</string>
+    <string>staticMethod jenkins.model.Jenkins getInstance</string>
+    <string>staticMethod org.apache.commons.io.FileUtils copyDirectory java.io.File java.io.File</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods deleteDir java.io.File</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getText java.io.File</string>
+  </approvedSignatures>
+  <aclApprovedSignatures/>
+  <approvedClasspathEntries/>
+  <pendingScripts/>
+  <pendingSignatures/>
+  <pendingClasspathEntries/>
+</scriptApproval>
