@@ -1,2 +1,4 @@
 *.swp
 resources/helm/secret-files
+resources/terraform/config
+.terraform
