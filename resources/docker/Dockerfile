@@ -5,7 +5,11 @@ ENV ARCH=linux_amd64 \
     TERRAFORM_VERSION=0.11.11 \
     JENKINS_VERSION=2.150.2
 
+# Disable install wizard
 ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+
+# JCaC Plugin pointer to config/secret values
+ENV SECRETS="/var/jenkins_home/"
 
 # Add Vault client
 USER root
@@ -44,6 +48,3 @@ COPY scriptApproval.xml /var/jenkins_home/scriptApproval.xml
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
-# Disable wizards
-RUN echo "${JENKINS_VERSION}" > /var/jenkins_home/jenkins.install.InstallUtil.lastExecVersion
-RUN echo "${JENKINS_VERSION}" > /var/jenkins_home/jenkins.install.UpgradeWizard.state

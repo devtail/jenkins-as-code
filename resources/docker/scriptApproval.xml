@@ -46,6 +46,7 @@
     <string>method jenkins.model.Jenkins getInjector</string>
     <string>method com.google.inject.Injector getInstance java.lang.Class</string>
     <string>method jenkins.security.s2m.AdminWhitelistRule setMasterKillSwitch boolean</string>
+    <string>method io.jenkins.plugins.casc.ConfigurationAsCode configure</string>
     <string>new hudson.security.csrf.DefaultCrumbIssuer boolean</string>
     <string>new com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey com.cloudbees.plugins.credentials.CredentialsScope java.lang.String java.lang.String com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey$PrivateKeySource java.lang.String java.lang.String</string>
     <string>new com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey$DirectEntryPrivateKeySource java.lang.String</string>
@@ -86,6 +87,7 @@
     <string>staticMethod org.apache.commons.io.FileUtils copyDirectory java.io.File java.io.File</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods deleteDir java.io.File</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getText java.io.File</string>
+    <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods leftShift java.io.File java.lang.Object</string>
   </approvedSignatures>
   <aclApprovedSignatures/>
   <approvedClasspathEntries/>

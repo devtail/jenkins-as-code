@@ -5,38 +5,16 @@ node('master') {
     checkout scm
   }
 
-  stage('Credentials') {
-    // groovy script to configure and load credentials such as ssh keys
-    load('resources/config/credentials.groovy')
+  stage('Configuration') {
+    // set config file in master
+    sh('cp /var/jenkins_home/workspace/Admin/Configure/resources/config/configuration-as-code-plugin/jenkins.yaml /var/jenkins_home/jenkins.yaml')
+    // run configuration from config file
+    load('resources/config/groovy/triggerConfigurationAsCodePlugin.groovy')
+    // set the timezone
+    load('resources/config/groovy/timezone.groovy')
   }
 
-  stage('Auth') {
-    // groovy script to configure the authentication (e.g., OAuth)
-    load('resources/config/auth.groovy')
-  }
-
-  //stage('Slaves') {
-  //  // groovy script to configure the jenkins slaves
-  //  load('resources/config/slaves.groovy')
-  //}
-
-  stage('Shared Libraries') {
-    // groovy script to configure the shared library repository as a global shared library within jenkins
-    load('resources/config/globalSharedLibrary.groovy')
-  }
-
-  stage('General Settings') {
-    // groovy script for some general settings (e.g., UI theme or slack)
-    load('resources/config/securitySettings.groovy')
-    load('resources/config/slack.groovy')
-    load('resources/config/theme.groovy')
-    load('resources/config/github.groovy')
-    load('resources/config/timezone.groovy')
-    load('resources/config/baseURL.groovy')
-    load('resources/config/globalEnvVars.groovy')
-  }
-
-  stage('Seed') {
+  stage('Job Seeding') {
     // seed the jobs
     jobDsl(targets: 'resources/jobDSL/*.groovy', sandbox: false)
   }
