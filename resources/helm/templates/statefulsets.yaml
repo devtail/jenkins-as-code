@@ -42,6 +42,8 @@ spec:
           mountPath: /var/jenkins_home/jenkins-basic-auth-credentials
         - name: jenkins-tokens
           mountPath: /var/jenkins_home/jenkins-tokens
+        - name: terraform-config
+          mountPath: /var/jenkins_home/agent-bootstrapping-terraform-config
       volumes:
       - name: jenkins-ssh-keys
         secret:
@@ -52,3 +54,6 @@ spec:
       - name: jenkins-tokens
         secret:
           secretName: jenkins-tokens
+      - name: terraform-config
+        secret:
+          secretName: terraform-config

@@ -11,8 +11,13 @@ ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 # JCaC Plugin pointer to config/secret values
 ENV SECRETS="/var/jenkins_home/"
 
-# Add Vault client
 USER root
+
+# Install deps
+RUN apt-get update -y \
+  && apt-get install -y build-essential rsync
+
+# Add Vault client
 RUN curl -sL https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_${ARCH}.zip -o /tmp/vault_${VAULT_VERSION}_${ARCH}.zip \
   && curl -sL https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_SHA256SUMS -o /tmp/vault_${VAULT_VERSION}_SHA256SUMS \
   && export CUR_DIR=$(pwd) \

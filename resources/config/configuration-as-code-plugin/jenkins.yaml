@@ -35,14 +35,38 @@ jenkins:
         labelString: "docker"
         name: "docker-agent-1"
         nodeName: "docker-agent-1"
+        numExecutors: 2
+        remoteFS: "/home/ubuntu"
         launcher:
           setupSlaveLauncher:
-            startScript: "make bootstrap-docker-agent-1"
-            stopScript: "make destroy-docker-agent-1"
+            startScript: "cd /var/jenkins_home/agent-bootstrapping/ && make bootstrap-agent-vm AGENT_ID=0"
+            stopScript: "cd /var/jenkins_home/agent-bootstrapping/ && make destroy-agent-vm AGENT_ID=0"
             launcher:
               sSHLauncher:
-                credentialsId: "ssh-key-agents"
-                host: "docker-agent-1.devtail.io"
+                credentialsId: "ssh-agent-access-key"
+                host: "18.195.158.124"
+                workDir: "/home/ubuntu"
+                sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
+        retentionStrategy:
+          demand: 
+            idleDelay: 1000
+            inDemandDelay: 0
+    - permanent:
+        labelString: "docker"
+        name: "docker-agent-2"
+        nodeName: "docker-agent-2"
+        numExecutors: 2
+        remoteFS: "/home/ubuntu"
+        launcher:
+          setupSlaveLauncher:
+            startScript: "cd /var/jenkins_home/agent-bootstrapping/ && make bootstrap-agent-vm AGENT_ID=1"
+            stopScript: "cd /var/jenkins_home/agent-bootstrapping/ && make destroy-agent-vm AGENT_ID=1"
+            launcher:
+              sSHLauncher:
+                credentialsId: "ssh-agent-access-key"
+                host: "18.194.152.197"
+                workDir: "/home/ubuntu"
+                sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
         retentionStrategy:
           demand: 
             idleDelay: 1000
@@ -108,6 +132,15 @@ credentials:
               privateKeySource:
                 directEntry:
                   privateKey: "${jenkins-ssh-keys/deploy-key-shared-library}"
+          - basicSSHUserPrivateKey:
+              scope: "GLOBAL"
+              id: "ssh-agent-access-key"
+              username: "ubuntu"
+              passphrase: ""
+              description: "SSH key to access agents"
+              privateKeySource:
+                directEntry:
+                  privateKey: "${jenkins-ssh-keys/ssh-agent-access-key}"
 
 unclassified:
   location:

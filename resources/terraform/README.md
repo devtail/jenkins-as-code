@@ -1,4 +1,4 @@
-# Terraform for Slave Infrastructure
+# Terraform for Agent Infrastructure
 
 ## Place variables/secrets in config/
 
@@ -10,43 +10,51 @@ Directory structure should in the end look like that:
 ```
 terraform/
 ├── aws
-│   ├── slave-network
+│   ├── agent-network
 │   │   ├── all.tf
-│   │   ├── aws-slave-network.backend.config -> ../../config/aws-slave-network.backend.config                                            
+│   │   ├── aws-agent-network.backend.config -> ../../config/aws-agent-network.backend.config                                            
 │   │   ├── io.tf
-│   │   └── terraform.tfvars -> ../../config/aws-slave-network.tfvars                                                                    
-│   └── slave-vms
+│   │   └── terraform.tfvars -> ../../config/aws-agent-network.tfvars                                                                    
+│   └── agent-vms
 │       ├── all.tf
-│       ├── aws-slave-vms.backend.config -> ../../config/aws-slave-vms.backend.config                                                    
+│       ├── aws-agent-vms.backend.config -> ../../config/aws-agent-vms.backend.config                                                    
 │       ├── io.tf
-│       └── terraform.tfvars -> ../../config/aws-slave-vms.tfvars
+│       └── terraform.tfvars -> ../../config/aws-agent-vms.tfvars
 ├── config
-│   ├── aws-slave-network.backend.config
-│   ├── aws-slave-network.tfvars
-│   ├── aws-slave-vms.backend.config
-│   └── aws-slave-vms.tfvars
+│   ├── aws-agent-network.backend.config
+│   ├── aws-agent-network.tfvars
+│   ├── aws-agent-vms.backend.config
+│   └── aws-agent-vms.tfvars
+├── Makefile
 └── README.md
 ```
 
-## Slave Network Infrastructure
+## Agent Network Infrastructure
 
 To initialize the state:
 ```
-cd aws/slave-network
-terraform init -backend-config aws-slave-network.backend.config
+cd aws/agent-network
+terraform init -backend-config aws-agent-network.backend.config
 ```
 
 To bootstrap the network:
 ```
-cd aws/slave-network
+cd aws/agent-network
 terraform apply
 ```
 
-## Slave VMs
+## Agent VMs
 
-Jenkins can use the `slave-vms` module to bootstrap/shutdown slave VMs on-demand. 
-A call in jenkins could look like that:
+Bootstrap agent-1:
 ```
-cd aws/slave-vms
+cd aws/agent-vms
+terraform workspace select 0
+terraform apply
+```
+
+Bootstrap agent-2:
+```
+cd aws/agent-vms
+terraform workspace select 1
 terraform apply
 ```
