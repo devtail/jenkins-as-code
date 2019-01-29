@@ -21,3 +21,6 @@ add-apt-repository \
 
 apt-get update -y
 apt-get install -y docker-ce
+
+groupadd docker
+usermod -aG docker ubuntu

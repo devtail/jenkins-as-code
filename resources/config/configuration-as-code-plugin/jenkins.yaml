@@ -73,6 +73,8 @@ jenkins:
             inDemandDelay: 0
 
 security:
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
   remotingCLI:
     enabled: false
   sSHD:

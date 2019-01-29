@@ -5,7 +5,7 @@ get-workspace:
 
 bootstrap-agent-vm: get-workspace
 	terraform apply -auto-approve
-	sleep 10
+	sleep 30
 
 destroy-agent-vm: get-workspace
 	terraform destroy -auto-approve
