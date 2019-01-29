@@ -20,7 +20,7 @@ output "agent_access_key_name" {
 }
 
 output "agent_public_ip_ids" {
-  value = "${aws_eip.public-agent-ip.*.id}"
+  value = "${data.aws_eip.public-agent-ip.*.id}"
 }
 
 output "agent_config_map" {

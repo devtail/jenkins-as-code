@@ -44,7 +44,7 @@ jenkins:
             launcher:
               sSHLauncher:
                 credentialsId: "ssh-agent-access-key"
-                host: "18.195.158.124"
+                host: "3.122.211.28"
                 workDir: "/home/ubuntu"
                 sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
         retentionStrategy:
@@ -64,7 +64,7 @@ jenkins:
             launcher:
               sSHLauncher:
                 credentialsId: "ssh-agent-access-key"
-                host: "18.194.152.197"
+                host: "52.28.19.52"
                 workDir: "/home/ubuntu"
                 sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
         retentionStrategy:

@@ -67,10 +67,11 @@ resource "aws_key_pair" "agent-access" {
   public_key = "${var.agent_access_public_key}"
 }
 
-resource "aws_eip" "public-agent-ip" {
+data "aws_eip" "public-agent-ip" {
   count = "${length(keys(var.agent_config_map)) / var.num_agents}"
 
-  tags = {
-    Name = "${var.agent_config_map["${count.index}_name"]}"
+  filter {
+    name   = "tag:Name"
+    values = ["${var.agent_config_map["${count.index}_name"]}"]
   }
 }
