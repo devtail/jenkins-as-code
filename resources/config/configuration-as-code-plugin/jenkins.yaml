@@ -39,12 +39,12 @@ jenkins:
         remoteFS: "/home/ubuntu"
         launcher:
           setupSlaveLauncher:
-            startScript: "cd /var/jenkins_home/agent-bootstrapping/ && make bootstrap-agent-vm AGENT_ID=0"
-            stopScript: "cd /var/jenkins_home/agent-bootstrapping/ && make destroy-agent-vm AGENT_ID=0"
+            startScript: "java -jar /var/jenkins_home/war/WEB-INF/jenkins-cli.jar -s http://localhost:8080 -ssh -user admin -i /var/jenkins_home/jenkins-ssh-keys/ssh-agent-access-key build 'Admin/AWSAgentBootstrap' -p agentID='0' -s"
+            stopScript: "java -jar /var/jenkins_home/war/WEB-INF/jenkins-cli.jar -s http://localhost:8080 -ssh -user admin -i /var/jenkins_home/jenkins-ssh-keys/ssh-agent-access-key build 'Admin/AWSAgentDestroy' -p agentID='0' -s"
             launcher:
               sSHLauncher:
                 credentialsId: "ssh-agent-access-key"
-                host: "3.122.211.28"
+                host: "18.195.157.53"
                 workDir: "/home/ubuntu"
                 sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
         retentionStrategy:
@@ -59,12 +59,12 @@ jenkins:
         remoteFS: "/home/ubuntu"
         launcher:
           setupSlaveLauncher:
-            startScript: "cd /var/jenkins_home/agent-bootstrapping/ && make bootstrap-agent-vm AGENT_ID=1"
-            stopScript: "cd /var/jenkins_home/agent-bootstrapping/ && make destroy-agent-vm AGENT_ID=1"
+            startScript: "java -jar /var/jenkins_home/war/WEB-INF/jenkins-cli.jar -s http://localhost:8080 -ssh -user admin -i /var/jenkins_home/jenkins-ssh-keys/ssh-agent-access-key build 'Admin/AWSAgentBootstrap' -p agentID='1' -s"
+            stopScript: "java -jar /var/jenkins_home/war/WEB-INF/jenkins-cli.jar -s http://localhost:8080 -ssh -user admin -i /var/jenkins_home/jenkins-ssh-keys/ssh-agent-access-key build 'Admin/AWSAgentDestroy' -p agentID='1' -s"
             launcher:
               sSHLauncher:
                 credentialsId: "ssh-agent-access-key"
-                host: "52.28.19.52"
+                host: "3.122.182.67"
                 workDir: "/home/ubuntu"
                 sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
         retentionStrategy:

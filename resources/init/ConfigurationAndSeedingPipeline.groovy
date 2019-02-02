@@ -17,15 +17,13 @@ node('master') {
 
     // set the timezone
     load('resources/config/groovy/timezone.groovy')
-
-    // copy agent boostrapping automation
-    sh('rsync -rl /var/jenkins_home/workspace/Admin/Configure/resources/terraform/ /var/jenkins_home/agent-bootstrapping/')
-    sh('ln -sfn /var/jenkins_home/agent-bootstrapping-terraform-config /var/jenkins_home/agent-bootstrapping/config')
   }
 
   stage('Deploy Agent Networks') {
     ansiColor('xterm') {
-      sh('cd /var/jenkins_home/agent-bootstrapping && make deploy-agent-network')
+      sh('ln -sfn /var/jenkins_home/agent-bootstrapping-terraform-config/aws-agent-network.backend.config resources/terraform/aws/agent-network/')
+      sh('ln -sfn /var/jenkins_home/agent-bootstrapping-terraform-config/aws-agent-network.tfvars resources/terraform/aws/agent-network/terraform.tfvars')
+      sh('cd resources/terraform/ && make deploy-agent-network')
     }
   }
 
