@@ -47,6 +47,7 @@
     <string>method com.google.inject.Injector getInstance java.lang.Class</string>
     <string>method jenkins.security.s2m.AdminWhitelistRule setMasterKillSwitch boolean</string>
     <string>method io.jenkins.plugins.casc.ConfigurationAsCode configure</string>
+    <string>method hudson.model.User addProperty hudson.model.UserProperty</string>
     <string>new hudson.security.csrf.DefaultCrumbIssuer boolean</string>
     <string>new com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey com.cloudbees.plugins.credentials.CredentialsScope java.lang.String java.lang.String com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey$PrivateKeySource java.lang.String java.lang.String</string>
     <string>new com.cloudbees.jenkins.plugins.sshcredentials.impl.BasicSSHUserPrivateKey$DirectEntryPrivateKeySource java.lang.String</string>
@@ -71,6 +72,7 @@
     <string>new org.jenkinsci.plugins.workflow.libs.LibraryConfiguration java.lang.String org.jenkinsci.plugins.workflow.libs.LibraryRetriever</string>
     <string>new org.jenkinsci.plugins.workflow.libs.SCMSourceRetriever jenkins.scm.api.SCMSource</string>
     <string>new org.jenkinsci.plugins.simpletheme.CssUrlThemeElement java.lang.String</string>
+    <string>new org.jenkinsci.main.modules.cli.auth.ssh.UserPropertyImpl java.lang.String</string>
     <string>staticField com.cloudbees.plugins.credentials.CredentialsScope GLOBAL</string>
     <string>staticField hudson.model.Node$Mode EXCLUSIVE</string>
     <string>staticField jenkins.model.Jenkins ADMINISTER</string>
@@ -88,6 +90,7 @@
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods deleteDir java.io.File</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods getText java.io.File</string>
     <string>staticMethod org.codehaus.groovy.runtime.DefaultGroovyMethods leftShift java.io.File java.lang.Object</string>
+    <string>staticMethod hudson.model.User get java.lang.String</string>
   </approvedSignatures>
   <aclApprovedSignatures/>
   <approvedClasspathEntries/>

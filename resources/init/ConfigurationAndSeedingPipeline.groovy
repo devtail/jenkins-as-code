@@ -12,6 +12,9 @@ node('master') {
     // run configuration from config file
     load('resources/config/groovy/triggerConfigurationAsCodePlugin.groovy')
 
+    // set public key for bootstrapping user
+    load('resources/config/groovy/userPublicKeys.groovy')
+
     // set the timezone
     load('resources/config/groovy/timezone.groovy')
 

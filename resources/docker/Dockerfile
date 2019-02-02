@@ -6,7 +6,7 @@ ENV ARCH=linux_amd64 \
     JENKINS_VERSION=2.150.2
 
 # Disable install wizard
-ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false -Dorg.jenkinsci.main.modules.sshd.SSHD.hostName=127.0.0.1"
 
 # JCaC Plugin pointer to config/secret values
 ENV SECRETS="/var/jenkins_home/"
