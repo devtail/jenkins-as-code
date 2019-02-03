@@ -1,7 +1,9 @@
 projects = [
     [name: "ServiceA"],
     [name: "ServiceB"],
-    [name: "ServiceC"]
+    [name: "ServiceC"],
+    [name: "NEW ServiceD"],
+    [name: "NEW ServiceE"]
 ]
 
 for(project in projects) { 

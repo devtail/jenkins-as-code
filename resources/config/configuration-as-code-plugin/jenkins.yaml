@@ -162,7 +162,7 @@ unclassified:
   simple-theme-plugin:
     elements:
       - cssUrl: 
-          url: "https://fishi.devtail.io/content-images/jenkins-devtail-theme.css"
+          url: "https://fishi.devtail.io/content-images/jenkins-devtail-theme-demo.css"
 
   slackNotifier:
     teamDomain: "devtail"
