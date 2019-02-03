@@ -4,7 +4,7 @@
 
 **[Demo] Bootstrapping Jenkins:**
 <p align="center">
-  <img src="https://fishi.devtail.io/content-images/jenkins-bootstrap.gif">
+  <img src="https://fishi.devtail.io/content-images/jenkins-bootstrap-700px.gif">
 </p>
 
 This repository contains a Jenkins-as-Code approach. 
