@@ -53,7 +53,7 @@ pipelineJob("Admin/AWSAgentDestroy") {
                         credentials("deploy-key-shared-library")
                     }
 
-                    branch('master')
+                    branch('demo-theme-1')
                 }
             }
 

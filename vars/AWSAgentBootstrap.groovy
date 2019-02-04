@@ -13,7 +13,7 @@ def call(Map config) {
             }
             
             // Wait for cloud-init to bootstrap
-            sh("sleep 120")
+            //sh("sleep 120")
         }
     }
 }
