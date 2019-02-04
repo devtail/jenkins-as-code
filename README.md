@@ -14,7 +14,12 @@ Plugins and minimum setup are pre-baked inside a docker image.
 A configuration and seeding pipeline provisions Jenkins with configuration code from a central git repository. 
 Configuration includes: agents on demand (with terraform), slack, github, github-oauth, security settings, theming, ... 
 
-## Detailed Explanation
+## On-Demand Agents
+
+The code base also supports on-demand agents with custom terraform bootstrapping/destroy pipelines. 
+A demo can be found [here](resources/README.md)
+
+## Detailed Explanations
 
 The following blog entries describe in more detail how this works:
 
