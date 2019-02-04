@@ -49,7 +49,7 @@ jenkins:
                 sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
         retentionStrategy:
           demand: 
-            idleDelay: 1000
+            idleDelay: 1
             inDemandDelay: 0
     - permanent:
         labelString: "docker"
@@ -69,7 +69,7 @@ jenkins:
                 sshHostKeyVerificationStrategy: "nonVerifyingKeyVerificationStrategy"
         retentionStrategy:
           demand: 
-            idleDelay: 1000
+            idleDelay: 1
             inDemandDelay: 0
 
 security:
