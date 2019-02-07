@@ -1,6 +1,6 @@
 ---
 jenkins:
-  systemMessage: "Powered automagically by Groovy and Configuration-as-Code Plugin\n\n"
+  systemMessage: ${karl-test-message}
   numExecutors: 5
 
   crumbIssuer: 
@@ -134,6 +134,15 @@ credentials:
               privateKeySource:
                 directEntry:
                   privateKey: "${jenkins-ssh-keys/deploy-key-shared-library}"
+          - basicSSHUserPrivateKey:
+              scope: "GLOBAL"
+              id: "ssh-agent-access-key"
+              username: "ubuntu"
+              passphrase: ""
+              description: "SSH key to access agents"
+              privateKeySource:
+                directEntry:
+                  privateKey: "${jenkins-ssh-keys/ssh-agent-access-key}"
           - basicSSHUserPrivateKey:
               scope: "GLOBAL"
               id: "ssh-agent-access-key"

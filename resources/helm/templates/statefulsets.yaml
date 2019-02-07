@@ -22,6 +22,8 @@ spec:
         env:
         - name: DEPLOY_TS
           value: "{{ date "20060102150405" .Release.Time }}"
+        - name: CASC_VAULT_FILE
+          value: "/var/jenkins_home/jenkins-vault/casc-vault-file"
         - name: GITHUB_OAUTH_CLIENT_ID
           valueFrom:
             secretKeyRef:
@@ -44,6 +46,8 @@ spec:
           mountPath: /var/jenkins_home/jenkins-tokens
         - name: terraform-config
           mountPath: /var/jenkins_home/agent-bootstrapping-terraform-config
+        - name: jenkins-vault
+          mountPath: /var/jenkins_home/jenkins-vault
       volumes:
       - name: jenkins-ssh-keys
         secret:
@@ -57,3 +61,6 @@ spec:
       - name: terraform-config
         secret:
           secretName: terraform-config
+      - name: jenkins-vault
+        secret:
+          secretName: jenkins-vault
