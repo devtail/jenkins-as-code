@@ -41,3 +41,4 @@ The following blog entries describe in more detail how this works:
 
 - [Jenkins-as-Code Part I | Initial Setup](https://fishi.devtail.io/weblog/2019/01/06/jenkins-as-code-part-1/)
 - [Jenkins-as-Code Part II | Configuration](https://fishi.devtail.io/weblog/2019/01/12/jenkins-as-code-part-2/)
+- [Jenkins-as-Code Part III | JobDSL](https://fishi.devtail.io/weblog/2019/02/09/jenkins-as-code-part-3/)
