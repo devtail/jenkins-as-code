@@ -21,7 +21,7 @@ Tested with:
 - minikube `v0.33.1`
 - helm `2.12.2`
 
-To run locally:
+To run locally, create your secret files (Terraform, CasC secrets) at `resources/helm/secret-files` and run:
 
 ```
 minikube start
