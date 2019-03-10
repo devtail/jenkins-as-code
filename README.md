@@ -26,15 +26,15 @@ The following files with your secrets have to be created to run this prototype:
 ```
 resources/helm/
 |-- secret-files
-    |-- default-setup-password
-    |-- default-setup-user
+    |-- default-setup-password          # pre-baked setup user password
+    |-- default-setup-user              # pre-baked setup user name
     |-- deploy-key-shared-library       # private ssh deploy key
     |-- deploy-key-shared-library.pub   # public ssh deploy key
     |-- docker-registry-password
     |-- docker-registry-user
-    |-- github-ci-password
-    |-- github-ci-token
-    |-- github-ci-user
+    |-- github-ci-password              # GitHub Jenkins user password
+    |-- github-ci-token                 # GitHub Jenkins user access token
+    |-- github-ci-user                  # GitHub Jenkins user name
     |-- github-oauth-client-id
     |-- github-oauth-client-secret
     |-- slack-token
