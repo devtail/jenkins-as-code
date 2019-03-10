@@ -16,12 +16,33 @@ Configuration includes: agents on demand (with terraform), slack, github, github
 
 ## Running locally
 
-Tested with:
+This setup is tested with:
 
 - minikube `v0.33.1`
 - helm `2.12.2`
 
-To run locally, create your secret files (Terraform, CasC secrets) at `resources/helm/secret-files` and run:
+The following files with your secrets have to be created to run this prototype:
+
+```
+resources/helm/
+|-- secret-files
+    |-- default-setup-password
+    |-- default-setup-user
+    |-- deploy-key-shared-library       # private ssh deploy key
+    |-- deploy-key-shared-library.pub   # public ssh deploy key
+    |-- docker-registry-password
+    |-- docker-registry-user
+    |-- github-ci-password
+    |-- github-ci-token
+    |-- github-ci-user
+    |-- github-oauth-client-id
+    |-- github-oauth-client-secret
+    |-- slack-token
+    |-- ssh-agent-access-key            # private ssh deploy key
+    |-- ssh-agent-access-key.pub        # public ssh deploy key
+```
+
+After you have placed your secret files you can run:
 
 ```
 minikube start
