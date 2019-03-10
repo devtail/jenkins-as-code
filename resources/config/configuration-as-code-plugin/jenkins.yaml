@@ -89,12 +89,6 @@ credentials:
           #######
           - usernamePassword:
               scope: "GLOBAL"
-              id: "docker-registry"
-              description: "Docker Registry Credentials"
-              username: "${jenkins-basic-auth-credentials/docker-registry-user}"
-              password: "${jenkins-basic-auth-credentials/docker-registry-password}"
-          - usernamePassword:
-              scope: "GLOBAL"
               id: "github-ci-user"
               description: "Github CI User Credentials"
               username: "${jenkins-basic-auth-credentials/github-ci-user}"

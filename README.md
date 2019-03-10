@@ -30,8 +30,6 @@ resources/helm/
     |-- default-setup-user              # pre-baked setup user name
     |-- deploy-key-shared-library       # private ssh deploy key
     |-- deploy-key-shared-library.pub   # public ssh deploy key
-    |-- docker-registry-password
-    |-- docker-registry-user
     |-- github-ci-password              # GitHub Jenkins user password
     |-- github-ci-token                 # GitHub Jenkins user access token
     |-- github-ci-user                  # GitHub Jenkins user name

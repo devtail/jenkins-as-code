@@ -49,7 +49,6 @@ domain = Domain.global()
 // Add username/password pairs
 //////////////////////////////
 userPasswords = [
-    [id: 'docker-registry', description: 'Docker Registry Credentials', userNameFile: '/var/jenkins_home/jenkins-basic-auth-credentials/docker-registry-user', userPasswordFile: '/var/jenkins_home/jenkins-basic-auth-credentials/docker-registry-password'],
     [id: 'github-ci-user', description: 'GitHub CI User Credentials', userNameFile: '/var/jenkins_home/jenkins-basic-auth-credentials/github-ci-user', userPasswordFile: '/var/jenkins_home/jenkins-basic-auth-credentials/github-ci-password'], 
 ]
 
