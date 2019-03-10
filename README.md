@@ -36,8 +36,13 @@ resources/helm/
     |-- github-oauth-client-id
     |-- github-oauth-client-secret
     |-- slack-token
-    |-- ssh-agent-access-key            # private ssh deploy key
-    |-- ssh-agent-access-key.pub        # public ssh deploy key
+    |-- ssh-agent-access-key            # private ssh key for agent access
+    |-- ssh-agent-access-key.pub        # public ssh key for agent access
+    `-- terraform-config                # Terraform backend configs and secrets
+        |-- aws-agent-network.backend.config
+        |-- aws-agent-network.tfvars
+        |-- aws-agent-vms.backend.config
+        `-- aws-agent-vms.tfvars
 ```
 
 After you have placed your secret files you can run:
