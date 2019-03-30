@@ -1,14 +1,13 @@
-FROM jenkins/jenkins:2.150.2
+FROM jenkins/jenkins:2.164.1
 
 ENV ARCH=linux_amd64 \
-    VAULT_VERSION=1.0.2 \
-    TERRAFORM_VERSION=0.11.11 \
-    JENKINS_VERSION=2.150.2
+    VAULT_VERSION=1.0.3 \
+    TERRAFORM_VERSION=0.11.11 
 
 # Disable install wizard
 ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false -Dorg.jenkinsci.main.modules.sshd.SSHD.hostName=127.0.0.1"
 
-# JCaC Plugin pointer to config/secret values
+# JCasC Plugin pointer to config/secret values
 ENV SECRETS="/var/jenkins_home/"
 
 USER root
@@ -30,7 +29,6 @@ RUN rm -f /tmp/vault_${VAULT_VERSION}_${ARCH}.zip \
   && rm -f /tmp/vault_${VAULT_VERSION}_SHA256SUMS
 
 # Add Terraform client
-USER root
 RUN curl -sL https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_${ARCH}.zip -o /tmp/terraform_${TERRAFORM_VERSION}_${ARCH}.zip \
   && curl -sL https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_SHA256SUMS -o /tmp/terraform_${TERRAFORM_VERSION}_SHA256SUMS \
   && export CUR_DIR=$(pwd) \
