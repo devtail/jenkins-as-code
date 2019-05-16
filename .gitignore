@@ -1,3 +1,6 @@
 *.swp
 resources/helm/secret-files
 .terraform
+bin/helm
+bin/kubectl
+bin/minikube

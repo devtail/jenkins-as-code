@@ -8,18 +8,13 @@
 </p>
 
 This repository contains a Jenkins-as-Code approach. 
-Everything is tested and running with Jenkins `2.164.1` on minikube `v1.0.0`. 
+Everything is tested and running with Jenkins `2.164.3` on minikube `v1.0.0`. 
 The setup is based on docker, helm and git so it can be easily applied in different infrastructures.
 Plugins and minimum setup are pre-baked inside a docker image. 
 A configuration and seeding pipeline provisions Jenkins with configuration code from a central git repository. 
 Configuration includes: agents on demand (with terraform), slack, github, github-oauth, security settings, theming, ... 
 
 ## Running locally
-
-This setup is tested with:
-
-- minikube `v1.0.0`
-- helm `2.13.1`
 
 The following files with your secrets have to be created to run this prototype:
 
@@ -48,11 +43,12 @@ resources/helm/
 After you have placed your secret files you can run:
 
 ```
-minikube start
-helm upgrade --install jenkins-as-code resources/helm/
+make get-tools-(linux|mac)
+make minikube-start
+make deploy-helm
 ```
 
-This should open Jenkins on [http://192.168.99.100:30001/](http://192.168.99.100:30001/).
+This should open Jenkins on [http://192.168.99.100/](http://192.168.99.100/).
 
 ## On-Demand Agents
 
