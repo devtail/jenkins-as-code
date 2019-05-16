@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.164.1
+FROM jenkins/jenkins:2.164.3
 
 ENV ARCH=linux_amd64 \
     VAULT_VERSION=1.0.3 \
