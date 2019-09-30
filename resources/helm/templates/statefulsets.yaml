@@ -17,7 +17,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: jenkins
-        image: quay.io/devtail/jenkins-as-code:fishi0x01_jenkins-upgrade
+        image: quay.io/devtail/jenkins-as-code:master
         imagePullPolicy: Always
         env:
         - name: DEPLOY_TS
