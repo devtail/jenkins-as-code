@@ -1,8 +1,8 @@
-FROM jenkins/jenkins:2.164.3
+FROM jenkins/jenkins:2.190.1
 
 ENV ARCH=linux_amd64 \
-    VAULT_VERSION=1.0.3 \
-    TERRAFORM_VERSION=0.11.11 
+    VAULT_VERSION=1.2.3 \
+    TERRAFORM_VERSION=0.12.8 
 
 # Disable install wizard
 ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false -Dorg.jenkinsci.main.modules.sshd.SSHD.hostName=127.0.0.1"

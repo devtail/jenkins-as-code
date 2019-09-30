@@ -35,6 +35,7 @@ git
 github-api
 github-branch-source
 handlebars
+hashicorp-vault-plugin
 icon-shim
 jackson2-api
 javadoc
@@ -62,6 +63,7 @@ pipeline-rest-api
 pipeline-stage-step
 pipeline-stage-tags-metadata
 pipeline-stage-view
+pipeline-utility-steps
 plain-credentials
 resource-disposer
 role-strategy
