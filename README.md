@@ -8,7 +8,7 @@
 </p>
 
 This repository contains a Jenkins-as-Code approach. 
-Everything is tested and running with Jenkins `2.164.3` on minikube `v1.0.0`. 
+Everything is tested and running with Jenkins `2.190.1` on minikube `v1.0.0` (the .gif you above was done with an older version). 
 The setup is based on docker, helm and git so it can be easily applied in different infrastructures.
 Plugins and minimum setup are pre-baked inside a docker image. 
 A configuration and seeding pipeline provisions Jenkins with configuration code from a central git repository. 
