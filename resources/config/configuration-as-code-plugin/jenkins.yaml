@@ -75,8 +75,6 @@ jenkins:
 security:
   globalJobDslSecurityConfiguration:
     useScriptSecurity: false
-  remotingCLI:
-    enabled: false
   sSHD:
     port: 6666
 
